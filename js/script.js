@@ -28,10 +28,14 @@ if (map) {
       zoom: 15
     });
 
-    myPlacemark = new ymaps.Placemark(
-        [55.753722, 37.603675], {
-        preset: "twirl#redStretchyIcon",
-    });
+    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+      hintContent: 'Нижний Кисловский переулок, д.7, строение 1, офис 219',
+    }, {
+      iconLayout: 'default#image',
+      iconImageHref: 'img/map-ico.png',
+      iconImageSize: [80, 140],
+      iconImageOffset: [-5, -38]
+    }),
 
     myMap.geoObjects.add(myPlacemark);
   }
